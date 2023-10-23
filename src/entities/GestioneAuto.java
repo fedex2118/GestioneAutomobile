@@ -8,7 +8,7 @@ public class GestioneAuto {
 	private ArrayList<Auto> listaAuto;
 	private String nomeFile;
 	private Utente utente;
-	private Scanner scanner;
+	private Scanner scanner = new Scanner(System.in);
 	
 	public GestioneAuto() {
 		this.listaAuto = new ArrayList<>();
@@ -37,7 +37,7 @@ public class GestioneAuto {
 
 	// METODO MANAGER GESTIONE UTENTE
 	public void displayOpzioni() {
-		Scanner scanner = new Scanner(System.in);
+		Scanner scanner = this.scanner;
 		boolean exit = false;
 
 		while (!exit) {
@@ -65,7 +65,7 @@ public class GestioneAuto {
 	
 	//METODO DISPLAYOPZIONIUTENTE
 	public void displayOpzioniUtente() {
-		Scanner scanner = new Scanner(System.in);
+		Scanner scanner = this.scanner;
 		boolean exit = false;
 		
 		while (!exit) {
