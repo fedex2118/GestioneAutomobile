@@ -12,4 +12,4 @@ LISTA TASKS (Team Federico e Valerio):
 
 4. Iniziare a scrivere metodi su GestioneAuto (implementare corpo su alcuni metodi)
 
-5.Creazione e definizione di classe Dao e relativi metodi (mancano ancora corpo di alcuni metodi e manca il testing di essi stessi)
+5.Creazione e definizione di classe Dao e relativi metodi (mancano ancora corpo di alcuni metodi e manca il testing di alcuni di essi stessi)
