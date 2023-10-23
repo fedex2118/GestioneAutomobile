@@ -101,8 +101,7 @@ public class GestioneAuto {
 			System.out.println("2. Modifica auto");
 			System.out.println("3. Elimina auto");
 			System.out.println("4. Visualizza tutte le auto");
-			System.out.println("5. Cerca auto per targa");
-			System.out.println("6. Esci");
+			System.out.println("5. Esci");
 			System.out.println("Risposta: ");
 
 			int scelta = scanner.nextInt();
@@ -125,9 +124,6 @@ public class GestioneAuto {
 				visualizzaAuto();
 				break;
 			case 5:
-
-				break;
-			case 6:
 				exit = true;
 				break;
 			default:
@@ -251,6 +247,7 @@ public class GestioneAuto {
 			
 			System.out.println("Inserisci l'anno:");
 			int nuovoAnno = scanner.nextInt();
+			scanner.nextLine();
 			
 			AutoDAO.modificaAutoAnno(gc, auto, nuovoAnno);
 		}
@@ -269,6 +266,7 @@ public class GestioneAuto {
 			
 			System.out.println("Inserisci il prezzo:");
 			float nuovoPrezzo = scanner.nextFloat();
+			scanner.nextLine();
 			
 			AutoDAO.modificaAutoPrezzo(gc, auto, nuovoPrezzo);
 		}
