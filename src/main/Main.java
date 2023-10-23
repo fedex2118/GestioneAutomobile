@@ -8,8 +8,8 @@ public class Main {
 	
 	public static void main(String[] args) {
 	String url = "jdbc:mysql://localhost:3306/gestioneauto";
-	String user = "javauser";
-	String pwd = "eAbrfcjiGdMo88eE";
+	String user = "root";
+	String pwd = "root";
 	
 	GestoreConnessioni gc = new GestoreConnessioni(url, user, pwd);
 	
