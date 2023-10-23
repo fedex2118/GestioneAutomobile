@@ -22,6 +22,7 @@ public class GestoreConnessioni {
 		this.url = url;
 		this.user = user;
 		this.pwd = pwd;
+		stabilisciConnessione();
 	}
 	
 	public void stabilisciConnessione() {

@@ -74,6 +74,12 @@ public class Auto {
 	public void setTipoCarburante(String tipoCarburante) {
 		this.tipoCarburante = tipoCarburante;
 	}
+
+	@Override
+	public String toString() {
+		return "Auto [id=" + id + ", marca=" + marca + ", modello=" + modello + ", anno=" + anno + ", targa=" + targa
+				+ ", prezzo=" + prezzo + ", tipoCarburante=" + tipoCarburante + "]\n";
+	}
 	
 	
 	

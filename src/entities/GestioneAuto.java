@@ -9,6 +9,10 @@ public class GestioneAuto {
 	private String nomeFile;
 	private Utente utente;
 	private Scanner scanner;
+	
+	public GestioneAuto() {
+		this.listaAuto = new ArrayList<>();
+	}
 
 	public GestioneAuto(ArrayList<Auto> listaAuto, String nomeFile) {
 		this.listaAuto = listaAuto;
