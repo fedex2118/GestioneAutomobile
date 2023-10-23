@@ -79,6 +79,7 @@ public class GestioneAuto {
 			case 1:
 				utente = creaUtente();
 				displayOpzioniUtente();
+				exit = true;
 				break;
 			case 2:
 				exit = true;
@@ -114,6 +115,7 @@ public class GestioneAuto {
 				break;
 			case 2:
 				displayOpzioniModifica();
+				exit = true;
 				break;
 			case 3:
 				String targa = inserisciTarga();
