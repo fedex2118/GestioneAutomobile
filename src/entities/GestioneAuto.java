@@ -11,7 +11,7 @@ public class GestioneAuto {
 	private ArrayList<Auto> listaAuto = new ArrayList<>();
 	private String nomeFile;
 	private Utente utente;
-	private Scanner scanner;
+	private Scanner scanner = new Scanner(System.in);
 	private GestoreConnessioni gc;
 
 	public GestioneAuto(GestoreConnessioni gc) {
@@ -78,7 +78,7 @@ public class GestioneAuto {
 			switch (scelta) {
 			case 1:
 				utente = creaUtente();
-				// IMPLEMENTARE UN METODO CHE RICHIAMI TUTTI I METODI CHE PUò USARE L'UTENTE
+				displayOpzioniUtente();
 				break;
 			case 2:
 				exit = true;
@@ -110,7 +110,8 @@ public class GestioneAuto {
 
 			switch (scelta) {
 			case 1:
-
+				Auto auto = creaAuto();
+				AutoDAO.insertAuto(gc, this, auto);
 				break;
 			case 2:
 				displayOpzioniModifica();
@@ -141,6 +142,25 @@ public class GestioneAuto {
 		String password = scanner.nextLine();
 		return new Utente(nomeAdmin, password);
 	}
+	
+	//CREAZIONE AUTO
+		private Auto creaAuto() {
+			System.out.println("Inserisci la marca dell'auto:");
+			String marca = scanner.nextLine();
+			System.out.println("Inserisci il modello dell'auto:");
+			String modello = scanner.nextLine();
+			System.out.println("Inserisci l'anno dell'auto:");
+			int anno = scanner.nextInt();
+			scanner.nextLine();
+			System.out.println("Inserisci la targa dell'auto:");
+			String targa = scanner.nextLine();
+			System.out.println("Inserisci il prezzo dell'auto:");
+			float prezzo = scanner.nextFloat();
+			scanner.nextLine();
+			System.out.println("Inserisci il tipo di carburante dell'auto:");
+			String tipoCarburante = scanner.nextLine();
+			return new Auto(marca, modello, anno, targa, prezzo, tipoCarburante);
+		}
 
 	// SOTTOMENU
 	public void displayOpzioniModifica() {
@@ -257,4 +277,5 @@ public class GestioneAuto {
 
 	public void scriviSuFile() {
 
-	}
+	} 
+}

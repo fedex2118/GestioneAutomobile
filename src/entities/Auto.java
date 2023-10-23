@@ -18,6 +18,15 @@ public class Auto {
 		this.prezzo = prezzo;
 		this.tipoCarburante = tipoCarburante;
 	}
+	
+	public Auto(String marca, String modello, int anno, String targa, float prezzo, String tipoCarburante) {
+		this.marca = marca;
+		this.modello = modello;
+		this.anno = anno;
+		this.targa = targa;
+		this.prezzo = prezzo;
+		this.tipoCarburante = tipoCarburante;
+	}
 
 	public int getId() {
 		return id;

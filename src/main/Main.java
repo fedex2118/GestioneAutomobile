@@ -23,5 +23,7 @@ public class Main {
 	
 	System.out.println(ga.getListaAuto());
 	
+	ga.displayOpzioni();
+	
 	}
 }

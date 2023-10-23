@@ -40,8 +40,32 @@ public class AutoDAO {
 
 	}
 
-	public static ArrayList<Auto> insertAuto(GestoreConnessioni gc, GestioneAuto ga) {
-		return null;
+	public static void insertAuto(GestoreConnessioni gc, GestioneAuto ga, Auto auto) {
+		String query = ("INSERT INTO auto (marca, modello, anno, targa, prezzo, tipocarburante) "
+				+ "VALUES (?, ?, ?, ?, ?, ?)");
+		try {
+			Connection conn = gc.getConn();
+
+			PreparedStatement prstmt = conn.prepareStatement(query);
+
+			prstmt.setString(1, auto.getMarca());
+			prstmt.setString(2, auto.getModello());
+			prstmt.setInt(3, auto.getAnno());
+			prstmt.setString(4, auto.getTarga());
+			prstmt.setFloat(5, auto.getPrezzo());
+			prstmt.setString(6, auto.getTipoCarburante());
+			
+			
+			prstmt.execute();
+			
+			System.out.println("insert eseguito correttamente");
+			
+			ga.aggiungiAuto(auto);
+			
+			
+		} catch (SQLException ex) {
+			ex.printStackTrace();
+		}
 
 	}
 
@@ -52,7 +76,7 @@ public class AutoDAO {
 	
 	public static void modificaAutoMarca(GestoreConnessioni gc, Auto auto, String marca) {
 		
-		String query = ("UPDATE Auto SET Marca=? WHERE id=\"" + auto.getId() + "\"");
+		String query = ("UPDATE Auto SET Marca=? WHERE targa=\"" + auto.getTarga() + "\"");
 		try {
 			Connection conn = gc.getConn();
 			
