@@ -75,22 +75,126 @@ public class AutoDAO {
 //	}
 	
 	public static void modificaAutoMarca(GestoreConnessioni gc, Auto auto, String marca) {
-		
+
 		String query = ("UPDATE Auto SET Marca=? WHERE targa=\"" + auto.getTarga() + "\"");
 		try {
 			Connection conn = gc.getConn();
-			
+
 			PreparedStatement prstmt = conn.prepareStatement(query);
-			
-			prstmt.setString (1, marca);
-			
+
+			prstmt.setString(1, marca);
+
 			prstmt.executeUpdate();
-			
+
 			System.out.println("Modifica inserita correttamente");
-			
+
 			auto.setMarca(marca);
-		                                                             }
-		catch (SQLException ex) {
+		} catch (SQLException ex) {
+			ex.printStackTrace();
+		}
+
+	}
+
+	public static void modificaAutoModello(GestoreConnessioni gc, Auto auto, String modello) {
+
+		String query = ("UPDATE Auto SET Modello=? WHERE targa=\"" + auto.getTarga() + "\"");
+		try {
+			Connection conn = gc.getConn();
+
+			PreparedStatement prstmt = conn.prepareStatement(query);
+
+			prstmt.setString(1, modello);
+
+			prstmt.executeUpdate();
+
+			System.out.println("Modifica inserita correttamente");
+
+			auto.setModello(modello);
+		} catch (SQLException ex) {
+			ex.printStackTrace();
+		}
+
+	}
+
+	public static void modificaAutoAnno(GestoreConnessioni gc, Auto auto, int anno) {
+
+		String query = ("UPDATE Auto SET Anno=? WHERE targa=\"" + auto.getTarga() + "\"");
+		try {
+			Connection conn = gc.getConn();
+
+			PreparedStatement prstmt = conn.prepareStatement(query);
+
+			prstmt.setInt(1, anno);
+
+			prstmt.executeUpdate();
+
+			System.out.println("Modifica inserita correttamente");
+
+			auto.setAnno(anno);
+		} catch (SQLException ex) {
+			ex.printStackTrace();
+		}
+
+	}
+
+	public static void modificaAutoTarga(GestoreConnessioni gc, Auto auto, String targa) {
+
+		String query = ("UPDATE Auto SET Targa=? WHERE targa=\"" + auto.getTarga() + "\"");
+		try {
+			Connection conn = gc.getConn();
+
+			PreparedStatement prstmt = conn.prepareStatement(query);
+
+			prstmt.setString(1, targa);
+
+			prstmt.executeUpdate();
+
+			System.out.println("Modifica inserita correttamente");
+
+			auto.setTarga(targa);
+		} catch (SQLException ex) {
+			ex.printStackTrace();
+		}
+
+	}
+
+	public static void modificaAutoPrezzo(GestoreConnessioni gc, Auto auto, float prezzo) {
+
+		String query = ("UPDATE Auto SET Prezzo=? WHERE targa=\"" + auto.getTarga() + "\"");
+		try {
+			Connection conn = gc.getConn();
+
+			PreparedStatement prstmt = conn.prepareStatement(query);
+
+			prstmt.setFloat(1, prezzo);
+
+			prstmt.executeUpdate();
+
+			System.out.println("Modifica inserita correttamente");
+
+			auto.setPrezzo(prezzo);
+		} catch (SQLException ex) {
+			ex.printStackTrace();
+		}
+
+	}
+
+	public static void modificaAutoCarburante(GestoreConnessioni gc, Auto auto, String carburante) {
+
+		String query = ("UPDATE Auto SET tipocarburante=? WHERE targa=\"" + auto.getTarga() + "\"");
+		try {
+			Connection conn = gc.getConn();
+
+			PreparedStatement prstmt = conn.prepareStatement(query);
+
+			prstmt.setString(1, carburante);
+
+			prstmt.executeUpdate();
+
+			System.out.println("Modifica inserita correttamente");
+
+			auto.setTipoCarburante(carburante);
+		} catch (SQLException ex) {
 			ex.printStackTrace();
 		}
 
