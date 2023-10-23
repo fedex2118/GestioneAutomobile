@@ -1,5 +1,7 @@
 package dao;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -47,9 +49,27 @@ public class AutoDAO {
 
 	}
 
-	public static ArrayList<Auto> deleteAuto(GestoreConnessioni gc, GestioneAuto ga) {
-		return null;
+	public static void deleteAuto(GestoreConnessioni gc, GestioneAuto ga, Auto auto) {
+		String query = ("DELETE FROM Auto WHERE id=?");
 
+		try {
+			Connection conn = gc.getConn();
+
+			PreparedStatement prstmt = conn.prepareStatement(query);
+
+			int id = auto.getId();
+
+			prstmt.setString(1, id + "");
+
+			System.out.println("Delete eseguita correttamente");
+
+			prstmt.execute();
+			
+			ga.eliminaAuto(auto);
+			
+		} catch (SQLException ex) {
+			ex.printStackTrace();
+		}
 	}
 
 	public static ArrayList<Auto> cercaAutoPerTarga(GestoreConnessioni gc, GestioneAuto ga) {

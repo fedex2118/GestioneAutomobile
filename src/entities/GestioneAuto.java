@@ -121,8 +121,8 @@ public class GestioneAuto {
 
 	}
 
-	public void eliminaAuto() {
-
+	public void eliminaAuto(Auto auto) {
+		listaAuto.remove(auto);
 	}
 
 	public ArrayList<Auto> visualizzaAuto() {
