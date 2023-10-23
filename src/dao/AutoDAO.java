@@ -3,6 +3,7 @@ package dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
@@ -44,8 +45,30 @@ public class AutoDAO {
 
 	}
 
-	public static ArrayList<Auto> modificaAuto(GestoreConnessioni gc, GestioneAuto ga) {
-		return null;
+//	public static ArrayList<Auto> modificaAuto(GestoreConnessioni gc, GestioneAuto ga) {
+//		return null;
+//
+//	}
+	
+	public static void modificaAutoMarca(GestoreConnessioni gc, Auto auto, String marca) {
+		
+		String query = ("UPDATE Auto SET Marca=? WHERE id=\"" + auto.getId() + "\"");
+		try {
+			Connection conn = gc.getConn();
+			
+			PreparedStatement prstmt = conn.prepareStatement(query);
+			
+			prstmt.setString (1, marca);
+			
+			prstmt.executeUpdate();
+			
+			System.out.println("Modifica inserita correttamente");
+			
+			auto.setMarca(marca);
+		                                                             }
+		catch (SQLException ex) {
+			ex.printStackTrace();
+		}
 
 	}
 
