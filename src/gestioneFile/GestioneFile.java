@@ -8,7 +8,6 @@ public class GestioneFile {
 	String file ="src/resources/DBautomobili.txt";
     
 	
-	
 	public void leggiFile(String path) throws IOException {	
 		BufferedReader reader = new BufferedReader(new FileReader(file));
 		String currentLine = reader.readLine();
