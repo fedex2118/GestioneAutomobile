@@ -117,7 +117,9 @@ public class GestioneAuto {
 				displayOpzioniModifica();
 				break;
 			case 3:
-
+				String targa = inserisciTarga();
+				Auto automobileDaEliminare = cercaAutoPerTarga(targa);
+				AutoDAO.deleteAuto(gc, this, automobileDaEliminare);
 				break;
 			case 4:
 				visualizzaAuto();
@@ -263,12 +265,8 @@ public class GestioneAuto {
 		listaAuto.remove(auto);
 	}
 
-	public ArrayList<Auto> visualizzaAuto() {
-		return listaAuto;
-	}
-
-	public void cercaAutoPerTarga() {
-
+	public void visualizzaAuto() {
+		System.out.println(listaAuto);
 	}
 
 	public void leggiDaFile() {
