@@ -11,9 +11,9 @@ public class Main {
 	String user = "javauser";
 	String pwd = "eAbrfcjiGdMo88eE";
 	
-	GestioneAuto ga = new GestioneAuto();
-	
 	GestoreConnessioni gc = new GestoreConnessioni(url, user, pwd);
+	
+	GestioneAuto ga = new GestioneAuto(gc);
 	
 	
 	// TEST
